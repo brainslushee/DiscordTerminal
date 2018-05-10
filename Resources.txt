@@ -1,1 +1,2 @@
 Discord Developer page: https://discordapp.com/developers/docs/resources/channel
+Discord Python API Wrapper Documentation: https://discordpy.readthedocs.io/en/rewrite/
