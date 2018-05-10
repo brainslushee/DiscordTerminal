@@ -1,3 +1,9 @@
 Discord Developer page: https://discordapp.com/developers/docs/resources/channel
+
 Discord Python API Wrapper Documentation: https://discordpy.readthedocs.io/en/rewrite/
+
 An example of what we could try to do: https://github.com/xynxynxyn/terminal-discord
+
+This one was written in Rust, but has some interesting stuff like challenges
+they ran into, what they learned, etc.
+https://devpost.com/software/discord-for-the-terminal
