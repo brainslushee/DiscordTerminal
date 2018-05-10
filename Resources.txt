@@ -1,2 +1,3 @@
 Discord Developer page: https://discordapp.com/developers/docs/resources/channel
 Discord Python API Wrapper Documentation: https://discordpy.readthedocs.io/en/rewrite/
+An example of what we could try to do: https://github.com/xynxynxyn/terminal-discord
