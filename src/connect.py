@@ -4,3 +4,7 @@
 #Probably put the above in a .sh file
 
 import discord
+
+username = input("Enter username: ")
+password = input("Enter password: ")
+
