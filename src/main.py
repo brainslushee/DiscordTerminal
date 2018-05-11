@@ -6,6 +6,5 @@ import discord
 from connect import getUserInfo
 
 #Gets username and password as a dictionary
-
 userInfo = getUserInfo()
 
