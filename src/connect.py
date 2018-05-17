@@ -7,10 +7,13 @@ import discord
 def getUserInfo():
     username = input("Enter username: ")
     password = input("Enter password: ")
+    #token = input("Enter token: ")
+    
+
     print()
     info = {
         'username': username,
-        'password': password
+        'password': password,
+        'token': token
         }
     return info
-

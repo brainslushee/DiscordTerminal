@@ -13,3 +13,5 @@ userInfo = getUserInfo()
 client = discord.Client()
 
 client.login(userInfo['username'], userInfo['password'])
+
+client.run(userInfo['token'])
