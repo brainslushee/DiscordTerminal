@@ -8,3 +8,8 @@ from connect import getUserInfo
 
 #Gets username and password as a dictionary
 userInfo = getUserInfo()
+
+#Move this to client class eventually
+client = discord.Client()
+
+client.login(userInfo['username'], userInfo['password'])
