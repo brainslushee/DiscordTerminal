@@ -13,8 +13,6 @@ userInfo = getUserInfo()
 #Move this to client class eventually
 client = discord.Client()
 
-client.login(userInfo['username'], userInfo['password'])
+#client.login(userInfo['username'], userInfo['password'])
 
 client.run(userInfo['token'])
-
-client.close()

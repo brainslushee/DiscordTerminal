@@ -3,7 +3,7 @@
 import discord
 import asyncio
 
-client = discord.Client()
+#client = discord.Client()
 
 @client.event
 async def on_ready():
@@ -12,4 +12,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.close()
+#client.close()
