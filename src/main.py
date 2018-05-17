@@ -1,4 +1,5 @@
 #To get discord.py: sudo python -m pip install -U discord.py
+#To get asyncio: sudo python -m pip install -U asyncio
 #May want to put the above in a .sh file
 import discord
 
@@ -7,4 +8,3 @@ from connect import getUserInfo
 
 #Gets username and password as a dictionary
 userInfo = getUserInfo()
-
