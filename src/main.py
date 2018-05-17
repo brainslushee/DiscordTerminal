@@ -2,6 +2,7 @@
 #To get asyncio: sudo python -m pip install -U asyncio
 #May want to put the above in a .sh file
 import discord
+import asyncio
 
 #Add functions from connect as needed
 from connect import getUserInfo
@@ -15,3 +16,5 @@ client = discord.Client()
 client.login(userInfo['username'], userInfo['password'])
 
 client.run(userInfo['token'])
+
+client.close()
