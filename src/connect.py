@@ -19,6 +19,7 @@ def getUserInfo():
         }
     return info
 
+#Discord.py may require async due to coroutines, this is here in that case
 async def loginClient(client, info):
     await client.login(info['username'], info['password'])
     print("Login successful?: " + str(client.is_logged_in))

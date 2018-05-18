@@ -13,6 +13,7 @@ userInfo = getUserInfo()
 #Move this to client class eventually
 client = discord.Client()
 
+#Trying to implement asyncio on connect.py
 loginClient(client, userInfo)
 
 #Prints if login is successful
