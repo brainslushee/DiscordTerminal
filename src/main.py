@@ -14,7 +14,12 @@ userInfo = getUserInfo()
 client = discord.Client()
 
 #Trying to implement asyncio on connect.py
-loginClient(client, userInfo)
+#client.login(userInfo['username'], userInfo['password'])
+#client.connect()
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(loginClient(client, userInfo))
+loop.close()
 
 #Prints if login is successful
 print("Successful login: " + str(client.is_logged_in))
