@@ -25,6 +25,8 @@ async def loginClient(client, info):
     print("Login successful: " + str(client.is_logged_in))
 
 #Doesn't work yet... don't know why.
-async def printServers(client, info):
-    await client.login(info['username'], info['password'])
+async def printServers(client):
     print(client.servers)
+
+async def closeClient(client):
+    await client.close()
