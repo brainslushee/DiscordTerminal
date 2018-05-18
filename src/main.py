@@ -5,7 +5,7 @@ import discord
 import asyncio
 
 #Add functions from connect as needed
-from connect import getUserInfo
+from connect import getUserInfo, loginClient
 
 #Gets username and password as a dictionary
 userInfo = getUserInfo()
@@ -13,9 +13,7 @@ userInfo = getUserInfo()
 #Move this to client class eventually
 client = discord.Client()
 
-client.login(userInfo['username'], userInfo['password'])
-client.connect()
+loginClient(client, userInfo)
 
 #Prints if login is successful
 print("Successful login: " + str(client.is_logged_in))
-client.logout()
