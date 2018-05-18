@@ -9,7 +9,6 @@ def getUserInfo():
     password = input("Enter password: ")
     #Currently a bot created through Discord API is required for this token
     #token = input("Enter token: ")
-    
 
     print()
     info = {
