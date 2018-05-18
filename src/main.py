@@ -14,5 +14,8 @@ userInfo = getUserInfo()
 client = discord.Client()
 
 client.login(userInfo['username'], userInfo['password'])
+client.connect()
 
+#Prints if login is successful
+print("Successful login: " + str(client.is_logged_in))
 client.logout()

@@ -14,6 +14,6 @@ def getUserInfo():
     info = {
         'username': username,
         'password': password,
-        'token': token
+        #'token': token
         }
     return info
