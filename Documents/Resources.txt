@@ -8,6 +8,9 @@ https://github.com/Rapptz/discord.py
 Intro guide for discord.py
 https://mdod.gitbooks.io/discord-py-beginner-s-guide/content/Basics.html
 
+Python documentation on async:
+https://docs.python.org/3/reference/compound_stmts.html#async-def
+
 An example of what we could try to do: https://github.com/xynxynxyn/terminal-discord
 
 This one was written in Rust, but has some interesting stuff like challenges
