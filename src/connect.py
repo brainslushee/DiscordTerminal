@@ -22,9 +22,9 @@ def getUserInfo():
 #Discord.py may require async due to coroutines, this is here in that case
 async def loginClient(client, info):
     await client.login(info['username'], info['password'])
-    print("Login successful: " + client.is_logged_in)
+    print("Login successful: " + str(client.is_logged_in))
 
 #Doesn't work yet... don't know why.
 async def printServers(client, info):
     await client.login(info['username'], info['password'])
-    print(client.user)
+    print(client.servers)
