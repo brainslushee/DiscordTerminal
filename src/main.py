@@ -13,10 +13,7 @@ userInfo = getUserInfo()
 #Move this to client class eventually
 client = discord.Client()
 
-#Trying to implement asyncio on connect.py
-#client.login(userInfo['username'], userInfo['password'])
-#client.connect()
-
+#Logs in client within a loop, move into a function
 loop = asyncio.get_event_loop()
 loop.run_until_complete(loginClient(client, userInfo))
 loop.close()
