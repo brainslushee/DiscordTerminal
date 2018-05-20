@@ -10,12 +10,11 @@
 #   |_| |_____|_| \_\_|  |_|___|_| \_/_/   \_\_____|
 #                                                   
 
-
 import discord
 import asyncio
 
 #Add functions from connect as needed
-from connect import getUserInfo, loginClient, printServers, closeClient
+from connect import getUserInfo, loginClient#, printServers, closeClient
 
 #Gets username and password as a dictionary
 userInfo = getUserInfo()
@@ -23,12 +22,22 @@ userInfo = getUserInfo()
 #Move this to client class eventually
 client = discord.Client()
 
+token = loginClient(client, userInfo)
+
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
+    for server in list(client.servers):
+        print(server.name)
+    
+client.run(token, bot=False)
+
 #Logs in client within a loop, move into a function
-loop = asyncio.get_event_loop()
-loop.run_until_complete(loginClient(client, userInfo))
-loop.run_until_complete(printServers(client))
-loop.run_until_complete(closeClient(client))
-loop.close()
-
-
-loop.close()
+#loop = asyncio.get_event_loop()
+#loop.run_until_complete(loginClient(client, userInfo))
+#loop.run_until_complete(printServers(client))
+#loop.run_until_complete(closeClient(client))
+#loop.close()
