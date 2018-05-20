@@ -29,3 +29,6 @@ loop.run_until_complete(loginClient(client, userInfo))
 loop.run_until_complete(printServers(client))
 loop.run_until_complete(closeClient(client))
 loop.close()
+
+
+loop.close()

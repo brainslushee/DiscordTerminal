@@ -4,7 +4,6 @@ import discord
 import asyncio
 import getpass
 
-
 #Gets username and password, move this inside of a function and call from a main python file
 def getUserInfo():
     username = input("Enter username: ")
@@ -29,14 +28,12 @@ async def loginClient(client, info):
     except discord.errors.LoginFailure:
         print("Invalid login credentials. Login Failed.")
         print("Please try again.")
-
+        
 #Doesn't work yet... don't know why.
 async def printServers(client):
-    count = 1
     print("Available servers: ")
-    for key in client.servers:
-        print("\t{}. {}: {}".format(count, key, client.servers[key]))
-        count += 1
-
+    for server in client.servers:
+        print(server.name)
+        
 async def closeClient(client):
     await client.close()
