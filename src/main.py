@@ -33,12 +33,6 @@ async def on_ready():
     print("Available servers: ")
     for server in list(client.servers):
         print(server.name)
-    
-client.run(token, bot=False)
 
-#Logs in client within a loop, move into a function
-#loop = asyncio.get_event_loop()
-#loop.run_until_complete(loginClient(client, userInfo))
-#loop.run_until_complete(printServers(client))
-#loop.run_until_complete(closeClient(client))
-#loop.close()
+#Runs Discord, be patient, receive times are somewhat slow.
+client.run(token, bot=False)
