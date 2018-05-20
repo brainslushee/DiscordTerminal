@@ -32,7 +32,11 @@ async def loginClient(client, info):
 
 #Doesn't work yet... don't know why.
 async def printServers(client):
-    print(client.servers)
+    count = 1
+    print("Available servers: ")
+    for key in client.servers:
+        print("\t{}. {}: {}".format(count, key, client.servers[key]))
+        count += 1
 
 async def closeClient(client):
     await client.close()
