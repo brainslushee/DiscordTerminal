@@ -18,7 +18,7 @@ def getUserInfo():
     return info
 
 #Gets token to run program
-def loginClient(client, info):
+def getToken(client, info):
     try:
         client.login(info['username'], info['password'])
         print("Login successful: " + str(client.is_logged_in))

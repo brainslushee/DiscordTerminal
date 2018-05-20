@@ -14,7 +14,7 @@ import discord
 import asyncio
 
 #Add functions from connect as needed
-from connect import getUserInfo, loginClient#, printServers, closeClient
+from connect import getUserInfo, getToken#, printServers, closeClient
 
 #Gets username and password as a dictionary
 userInfo = getUserInfo()
@@ -22,7 +22,7 @@ userInfo = getUserInfo()
 #Move this to client class eventually
 client = discord.Client()
 
-token = loginClient(client, userInfo)
+token = getToken(client, userInfo)
 
 @client.event
 async def on_ready():
@@ -35,4 +35,4 @@ async def on_ready():
         print(server.name)
 
 #Runs Discord, be patient, receive times are somewhat slow.
-client.run(token, bot=False)
+client.run("MTQ0MjkyNzE2NzI4MDI1MDg4.Dc99gw.Hpgg23Gn7Ac0kSlKlaQoSCUdWA8", bot=False)
