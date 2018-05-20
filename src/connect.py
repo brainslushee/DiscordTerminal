@@ -6,7 +6,7 @@ import getpass
 
 #Gets username and password
 def getUserInfo():
-    username = input("Enter username: ")
+    username = input("Enter email address: ")
     
     #getpass works like Linux password entry. (Does not display chars for password)
     password = getpass.getpass("Enter password: ")
