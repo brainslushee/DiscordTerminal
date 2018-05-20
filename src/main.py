@@ -30,6 +30,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
+    print("Available servers: ")
     for server in list(client.servers):
         print(server.name)
     
