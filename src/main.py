@@ -50,4 +50,4 @@ async def on_ready():
         print(server.name)
 
 #Runs Discord, be patient, receive times are somewhat slow.
-client.run("MTQ0MjkyNzE2NzI4MDI1MDg4.Dc99gw.Hpgg23Gn7Ac0kSlKlaQoSCUdWA8", bot=False)
+client.run(token, bot=False)
