@@ -4,23 +4,20 @@ import discord
 import asyncio
 import getpass
 
-#Gets username and password, move this inside of a function and call from a main python file
+#Gets username and password
 def getUserInfo():
     username = input("Enter username: ")
+    
     #getpass works like Linux password entry. (Does not display chars for password)
     password = getpass.getpass("Enter password: ")
-    #Currently a bot created through Discord API is required for this token
-    #token = input("Enter token: ")
-
-    print()
+    
     info = {
         'username': username,
         'password': password,
-        #'token': token
         }
     return info
 
-#Discord.py may require async due to coroutines, this is here in that case
+#Gets token to run program
 def loginClient(client, info):
     try:
         client.login(info['username'], info['password'])
