@@ -21,7 +21,6 @@ def getUserInfo():
 def getToken(client, info):
     try:
         client.login(info['username'], info['password'])
-        print("Login successful: " + str(client.is_logged_in))
         token = str(client._get_cache_token(info['username'], info['password']))
         return token
     except discord.errors.LoginFailure:
