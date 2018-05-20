@@ -13,6 +13,13 @@ class ConfigManager:
 
     def getPassword(self):
         return self.password
+
+    def getUserInfo(self):
+        info = {
+                'username': self.username,
+                'password': self.password,
+              }
+        return info
         
     def readJSON(self, configFile):
         with open(configFile) as jsonFile:
