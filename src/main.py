@@ -12,12 +12,27 @@
 
 import discord
 import asyncio
+from ConfigManager import ConfigManager
 
 #Add functions from connect as needed
 from connect import getUserInfo, getToken#, printServers, closeClient
 
-#Gets username and password as a dictionary
-userInfo = getUserInfo()
+#this is a temporary menu that could be extracted into a function
+print("Login Menu: ")
+print("\t1. use config file")
+print("\t2. enter email and password manually")
+menuChoice = int(input("\t>>> "))
+
+userInfo = {}
+
+if menuChoice == 1:
+    #user ConfigManager class to get userInfo from json file
+    config = ConfigManager()
+    userInfo = config.getUserInfo()
+else:
+    #Gets username and password as a dictionary
+    userInfo = getUserInfo()
+
 
 #Move this to client class eventually
 client = discord.Client()
