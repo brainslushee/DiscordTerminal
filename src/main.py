@@ -13,6 +13,7 @@
 import discord
 import asyncio
 from ConfigManager import ConfigManager
+from Colors import Colors
 
 #Add functions from connect as needed
 from connect import getUserInfo, getToken#, printServers, closeClient
@@ -32,7 +33,12 @@ splashScreen = '''
 ----------------------------------------------------
     '''
 
-print(splashScreen)
+#create colors object for use in formatting colored terminal output
+colors = Colors()
+
+print(colors.Foreground.purple, splashScreen)
+colors.resetColors()
+
 
 
 #this is a temporary menu that could be extracted into a function
