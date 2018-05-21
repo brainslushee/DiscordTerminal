@@ -9,15 +9,15 @@ class Colors:
     '''   
     
     def __init__(self):
-        reset='\033[0m'
-        bold='\033[01m'
-        disable='\033[02m'
-        underline='\033[04m'
-        reverse='\033[07m'
-        strikethrough='\033[09m'
-        invisible='\033[08m'
+        self.reset='\033[0m'
+        self.bold='\033[01m'
+        self.disable='\033[02m'
+        self.underline='\033[04m'
+        self.reverse='\033[07m'
+        self.strikethrough='\033[09m'
+        self.invisible='\033[08m'
 
-    def reset(self):
+    def resetColors(self):
         #called to reset the color palete
         print(self.reset)
 
