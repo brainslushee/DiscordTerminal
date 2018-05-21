@@ -7,16 +7,18 @@ class Colors:
     whatever you're trying to print. Don't forget to reset the 
     colors. 
     '''   
-    reset='\033[0m'
-    bold='\033[01m'
-    disable='\033[02m'
-    underline='\033[04m'
-    reverse='\033[07m'
-    strikethrough='\033[09m'
-    invisible='\033[08m'
+    
+    def __init__(self):
+        reset='\033[0m'
+        bold='\033[01m'
+        disable='\033[02m'
+        underline='\033[04m'
+        reverse='\033[07m'
+        strikethrough='\033[09m'
+        invisible='\033[08m'
 
     def reset(self):
-        #called to reset the color pallet
+        #called to reset the color palete
         print(self.reset)
 
     class Foreground:
