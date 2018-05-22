@@ -10,6 +10,7 @@ def getUserInfo():
     
     #getpass works like Linux password entry. (Does not display chars for password)
     password = getpass.getpass("Enter password: ")
+    print("One moment please, we are trying to connect...")
     
     info = {
         'username': username,
@@ -17,16 +18,6 @@ def getUserInfo():
         }
     return info
 
-#Gets token to run program
-def getToken(client, info):
-    try:
-        client.login(info['username'], info['password'])
-        token = str(client._get_cache_token(info['username'], info['password']))
-        return token
-    except discord.errors.LoginFailure:
-        print("Invalid login credentials. Login Failed.")
-        print("Please try again.")
-        
 #Doesn't work yet... don't know why.
 async def printServers(client):
     print("Available servers: ")

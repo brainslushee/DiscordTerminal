@@ -16,7 +16,7 @@ from ConfigManager import ConfigManager
 from Colors import Colors
 
 #Add functions from connect as needed
-from connect import getUserInfo, getToken#, printServers, closeClient
+from connect import getUserInfo#, printServers, closeClient
 
 splashScreen = '''
 ----------------------------------------------------
@@ -54,12 +54,9 @@ if menuChoice == 1:
     config = ConfigManager()
     userInfo = config.getUserInfo()
     #use token from config file
-    token = userInfo["token"]
 else:
     #Gets username and password as a dictionary
     userInfo = getUserInfo()
-    #getToken() generates token from user input
-    token = getToken(client, userInfo)
 
 @client.event
 async def on_ready():
@@ -72,4 +69,5 @@ async def on_ready():
         print(server.name)
 
 #Runs Discord, be patient, receive times are somewhat slow.
-client.run(token, bot=False)
+loop = asyncio.get_event_loop()
+loop.run_until_complete(client.start(userInfo['username'], userInfo['password']))
