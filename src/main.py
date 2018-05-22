@@ -32,14 +32,14 @@ splashScreen = '''
     |_| |_____|_| \_\_|  |_|___|_| \_/_/   \_\_____|
 ----------------------------------------------------
     '''
+#Move this to client class eventually
+client = discord.Client()
 
 #create colors object for use in formatting colored terminal output
 colors = Colors()
 
 print(colors.Foreground.purple, splashScreen)
 colors.resetColors()
-
-
 
 #this is a temporary menu that could be extracted into a function
 print("Login Menu: ")
@@ -53,15 +53,13 @@ if menuChoice == 1:
     #user ConfigManager class to get userInfo from json file
     config = ConfigManager()
     userInfo = config.getUserInfo()
+    #use token from config file
+    token = userInfo["token"]
 else:
     #Gets username and password as a dictionary
     userInfo = getUserInfo()
-
-
-#Move this to client class eventually
-client = discord.Client()
-
-token = getToken(client, userInfo)
+    #getToken() generates token from user input
+    token = getToken(client, userInfo)
 
 @client.event
 async def on_ready():
