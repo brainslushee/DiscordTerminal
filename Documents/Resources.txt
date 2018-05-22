@@ -10,6 +10,8 @@ https://mdod.gitbooks.io/discord-py-beginner-s-guide/content/Basics.html
 
 Python documentation on async:
 https://docs.python.org/3/reference/compound_stmts.html#async-def
+How to do event loops in async - essentially each function must be wrapped in these
+https://docs.python.org/3/library/asyncio-eventloop.html
 
 An example of what we could try to do: https://github.com/xynxynxyn/terminal-discord
 
