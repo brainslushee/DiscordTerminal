@@ -4,6 +4,7 @@ import discord
 import asyncio
 import getpass
 import inquirer
+from menu import *
 
 #Gets username and password
 def getUserInfo():
@@ -34,6 +35,8 @@ async def chooseServer(client):
 
 #This doesn't work yet, will open submenu of channels to join once working
 async def chooseChannel(client, server):
+    clearScreen()
+    showSplash()
     channelChoices = []
     channelIDs = []
     for channel in server.channels:
@@ -41,7 +44,8 @@ async def chooseChannel(client, server):
         channelIDs.append(channel.id)
     selectedChannel = [
         inquirer.List('channel',
-                      message = "Select a channel",
+                      message = "Select a channel in " +
+                      setTextColor(server.name, 'red'),
                       choices = channelChoices
                       ),
         ]
