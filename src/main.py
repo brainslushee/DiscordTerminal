@@ -43,14 +43,21 @@ print(colors.Foreground.purple, splashScreen)
 colors.resetColors()
 
 #this is a temporary menu that could be extracted into a function
-print("Login Menu: ")
-print("\t1. use config file")
-print("\t2. enter email and password manually")
-menuChoice = int(input("\t>>> "))
-
 userInfo = {}
 
-if menuChoice == 1:
+loginOptions = [
+    inquirer.List('choice',
+                  message = "Login Menu",
+                  choices = [
+                      '1. use config file',
+                      '2. enter email and password manually',
+                  ],
+                 ),
+    ]
+
+menuChoice = inquirer.prompt(loginOptions)
+
+if menuChoice == '1. use config file':
     #user ConfigManager class to get userInfo from json file
     config = ConfigManager()
     userInfo = config.getUserInfo()
