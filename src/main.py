@@ -18,33 +18,12 @@ from Colors import Colors
 
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, clearScreen#, closeClient
-
+from menu import showSplash
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
-
-splashScreen = '''
-----------------------------------------------------
-   ____ ___ ____   ____ ___  ____  ____
-  |  _ \_ _/ ___| / ___/ _ \|  _ \|  _ \\
-  | | | | |\___ \| |  | | | | |_) | | | |
-  | |_| | | ___) | |__| |_| |  _ <| |_| |
-  |____/___|____/ \____\___/|_| \_\____/
-   _____ _____ ____  __  __ ___ _   _    _    _
-  |_   _| ____|  _ \|  \/  |_ _| \ | |  / \  | |
-    | | |  _| | |_) | |\/| || ||  \| | / _ \ | |
-    | | | |___|  _ <| |  | || || |\  |/ ___ \| |___
-    |_| |_____|_| \_\_|  |_|___|_| \_/_/   \_\_____|
-
-----------------------------------------------------
-    '''
+showSplash()
 #Move this to client class eventually
 client = discord.Client()
-
-#create colors object for use in formatting colored terminal output
-colors = Colors()
-
-print(colors.Foreground.purple, splashScreen)
-colors.resetColors()
 
 userInfo = {}
 
@@ -74,8 +53,10 @@ else:
 
 @client.event
 async def on_ready():
+    clearScreen()
+    print('--------------------------')
     print('Logged in as: ' + client.user.name)
-    print('------')
+    print('--------------------------')
     await chooseServer(client)
 
 
