@@ -22,10 +22,8 @@ def showSplash():
     ----------------------------------------------------
     '''
     #create colors object for use in formatting colored terminal output
-    colors = Colors()
 
-    print(colors.Foreground.purple, splashScreen)
-    colors.resetColors()
+    print(setTextColor(splashScreen, 'purple'))
 
 #Call this to clear terminal screen for clean UI
 def clearScreen():
