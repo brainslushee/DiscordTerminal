@@ -2,3 +2,5 @@
 2) Switch servers/private convo (hotkeys? scroll menu?)
 3) View messages
 4) Send messages
+5) Get channels selectable
+6) Make docstrings for each function
