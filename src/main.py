@@ -43,6 +43,7 @@ else:
     quit()
 
 print("One moment please, we are trying to connect...")
+server = None
 channel = None
 
 @client.event
@@ -60,10 +61,15 @@ async def on_ready():
 
     server = chooseServer(client)
     channel = chooseChannel(client, server)
-
+    #Definitely move this to another function
+    #It sends one message from YOU
     chat = input("Say something: ")
     await client.send_message(channel, chat)
 
+#Currently displays all messages from all servers. Still cool though.
+@client.event
+async def on_message(message):
+    print(message.content)
 
 #Runs Discord, be patient, receive times are somewhat slow.
 #Add client.logout() and close() here to fix the unclosed session error
