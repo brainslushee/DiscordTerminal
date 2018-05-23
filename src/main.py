@@ -19,14 +19,16 @@ from Colors import Colors
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer#, closeClient
 from menu import showSplash, clearScreen, getLoginType
+
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
 showSplash()
+
 #Move this to client class eventually
 client = discord.Client()
 
+#This logs in user, maybe move to a function?
 userInfo = {}
-
 loginType = getLoginType()
 if loginType == '1. use config file':
     #user ConfigManager class to get userInfo from json file
