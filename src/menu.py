@@ -34,9 +34,9 @@ def getLoginType():
     #Creates scrollable list of login options, extrapolate this for other screens
     loginOptions = [
         inquirer.List('choice',
-                      message = "Login Menu",
+                      message = "Login Type",
                       choices = [
-                          'Use Config File',
+                          'Config File Login',
                           'Manual Login',
                       ],
                      ),
