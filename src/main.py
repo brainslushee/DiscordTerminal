@@ -31,7 +31,7 @@ client = discord.Client()
 #Make to switch statement and add more options eventually
 userInfo = {}
 loginType = getLoginType()
-if loginType == 'Use Config File':
+if loginType == 'Config File Login':
     #user ConfigManager class to get userInfo from json file
     config = ConfigManager()
     userInfo = config.getUserInfo()
@@ -45,9 +45,12 @@ print("One moment please, we are trying to connect...")
 @client.event
 async def on_ready():
     clearScreen()
+    showSplash()
+    #Move this to a function
     hyphens = ""
-    loggedInAs = 'Logged in as: ' + client.user.name
-    for x in range(0, len(loggedInAs)):
+    colors = Colors()
+    loggedInAs = 'Logged in as: ' + colors.Foreground.red + client.user.name + colors.reset
+    for x in range(0, len(loggedInAs) - 9):
         hyphens += "-"
     print(hyphens)
     print(loggedInAs)
