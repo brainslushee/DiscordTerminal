@@ -31,7 +31,7 @@ client = discord.Client()
 #Make to switch statement and add more options eventually
 userInfo = {}
 loginType = getLoginType()
-if loginType == '1. use config file':
+if loginType == 'Use Config File':
     #user ConfigManager class to get userInfo from json file
     config = ConfigManager()
     userInfo = config.getUserInfo()
@@ -39,7 +39,7 @@ if loginType == '1. use config file':
 else:
     #Gets username and password as a dictionary
     userInfo = getUserInfo()
-    
+
 print("One moment please, we are trying to connect...")
 
 @client.event

@@ -36,8 +36,8 @@ def getLoginType():
         inquirer.List('choice',
                       message = "Login Menu",
                       choices = [
-                          '1. use config file',
-                          '2. enter email and password manually',
+                          'Use Config File',
+                          'Manual Login',
                       ],
                      ),
         ]
