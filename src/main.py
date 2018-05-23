@@ -17,7 +17,7 @@ from ConfigManager import ConfigManager
 from Colors import Colors
 
 #Add functions from connect as needed
-from connect import getUserInfo, printServers#, closeClient
+from connect import getUserInfo, chooseServer#, closeClient
 
 splashScreen = '''
 ----------------------------------------------------
@@ -70,7 +70,7 @@ else:
 async def on_ready():
     print('Logged in as: ' + client.user.name)
     print('------')
-    await printServers(client)
+    await chooseServer(client)
 
 
 #Runs Discord, be patient, receive times are somewhat slow.
