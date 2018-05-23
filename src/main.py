@@ -17,7 +17,7 @@ from ConfigManager import ConfigManager
 from Colors import Colors
 
 #Add functions from connect as needed
-from connect import getUserInfo, chooseServer#, closeClient
+from connect import getUserInfo, chooseServer, chooseChannel#, closeClient
 from menu import showSplash, clearScreen, getLoginType
 
 #Clears the screen so that the splashScreen is all that displays
