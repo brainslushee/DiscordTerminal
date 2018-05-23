@@ -40,8 +40,9 @@ async def chooseChannel(client, server):
     channelChoices = []
     channelIDs = []
     for channel in server.channels:
-        channelChoices.append(channel.name)
-        channelIDs.append(channel.id)
+        #May not have voice functionality in terminal. Change this if we add it
+        if str(channel.type) != "voice":
+            channelChoices.append(channel)
     selectedChannel = [
         inquirer.List('channel',
                       message = "Select a channel in " +
