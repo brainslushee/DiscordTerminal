@@ -19,6 +19,7 @@ from Colors import Colors
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, clearScreen#, closeClient
 
+#Clears the screen so that the splashScreen is all that displays
 clearScreen()
 
 splashScreen = '''
@@ -45,9 +46,10 @@ colors = Colors()
 print(colors.Foreground.purple, splashScreen)
 colors.resetColors()
 
-#this is a temporary menu that could be extracted into a function
 userInfo = {}
 
+#Creates scrollable list of login options, extrapolate this for other screens
+#Maybe move into a function
 loginOptions = [
     inquirer.List('choice',
                   message = "Login Menu",
@@ -58,6 +60,7 @@ loginOptions = [
                  ),
     ]
 
+#Depending on loginOption selected, uses config or manual login. Maybe make into switch statement
 menuChoice = inquirer.prompt(loginOptions)
 
 if menuChoice == '1. use config file':
@@ -77,5 +80,6 @@ async def on_ready():
 
 
 #Runs Discord, be patient, receive times are somewhat slow.
+#Add client.logout() and close() here to fix the unclosed session error
 loop = asyncio.get_event_loop()
 loop.run_until_complete(client.start(userInfo['username'], userInfo['password']))

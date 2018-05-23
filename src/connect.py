@@ -20,7 +20,7 @@ def getUserInfo():
         }
     return info
 
-#Doesn't work yet... don't know why.
+#Creates a scrollable server select
 async def chooseServer(client):
     serverChoices = []
     for server in client.servers:
@@ -32,9 +32,11 @@ async def chooseServer(client):
                       ),
         ]
     serverChoice = inquirer.prompt(selectedServer)
+
 async def closeClient(client):
     await client.close()
 
+#Call this to clear terminal screen for clean UI
 def clearScreen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
