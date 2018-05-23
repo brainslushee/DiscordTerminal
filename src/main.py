@@ -17,8 +17,8 @@ from ConfigManager import ConfigManager
 from Colors import Colors
 
 #Add functions from connect as needed
-from connect import getUserInfo, chooseServer, clearScreen#, closeClient
-from menu import showSplash
+from connect import getUserInfo, chooseServer#, closeClient
+from menu import showSplash, clearScreen, getLoginType
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
 showSplash()
@@ -27,22 +27,8 @@ client = discord.Client()
 
 userInfo = {}
 
-#Creates scrollable list of login options, extrapolate this for other screens
-#Maybe move into a function
-loginOptions = [
-    inquirer.List('choice',
-                  message = "Login Menu",
-                  choices = [
-                      '1. use config file',
-                      '2. enter email and password manually',
-                  ],
-                 ),
-    ]
-
-#Depending on loginOption selected, uses config or manual login. Maybe make into switch statement
-menuChoice = inquirer.prompt(loginOptions)
-
-if menuChoice == '1. use config file':
+loginType = getLoginType()
+if loginType == '1. use config file':
     #user ConfigManager class to get userInfo from json file
     config = ConfigManager()
     userInfo = config.getUserInfo()

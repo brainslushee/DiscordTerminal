@@ -1,5 +1,8 @@
 from Colors import Colors
+import os
+import inquirer
 
+#Shows the splash screen
 def showSplash():
 
     splashScreen = '''
@@ -22,3 +25,23 @@ def showSplash():
 
     print(colors.Foreground.purple, splashScreen)
     colors.resetColors()
+
+#Call this to clear terminal screen for clean UI
+def clearScreen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def getLoginType():
+    #Creates scrollable list of login options, extrapolate this for other screens
+    loginOptions = [
+        inquirer.List('choice',
+                      message = "Login Menu",
+                      choices = [
+                          '1. use config file',
+                          '2. enter email and password manually',
+                      ],
+                     ),
+        ]
+
+    #Depending on loginOption selected, uses config or manual login. Maybe make into switch statement
+    loginType = inquirer.prompt(loginOptions)
+    return loginType

@@ -4,16 +4,15 @@ import discord
 import asyncio
 import getpass
 import inquirer
-import os
 
 #Gets username and password
 def getUserInfo():
     username = input("Enter email address: ")
-    
+
     #getpass works like Linux password entry. (Does not display chars for password)
     password = getpass.getpass("Enter password: ")
     print("One moment please, we are trying to connect...")
-    
+
     info = {
         'username': username,
         'password': password,
@@ -35,8 +34,3 @@ async def chooseServer(client):
 
 async def closeClient(client):
     await client.close()
-
-#Call this to clear terminal screen for clean UI
-def clearScreen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
