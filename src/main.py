@@ -18,7 +18,7 @@ from Colors import Colors
 
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, chooseChannel#, closeClient
-from menu import showSplash, clearScreen, getLoginType
+from menu import showSplash, clearScreen, getLoginType, setTextColor
 
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
@@ -48,8 +48,8 @@ async def on_ready():
     showSplash()
     #Move this to a function
     hyphens = ""
-    colors = Colors()
-    loggedInAs = 'Logged in as: ' + colors.Foreground.red + client.user.name + colors.reset
+
+    loggedInAs = 'Logged in as: ' + setTextColor(client.user.name, 'red')
     for x in range(0, len(loggedInAs) - 9):
         hyphens += "-"
     print(hyphens)

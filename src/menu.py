@@ -30,6 +30,13 @@ def showSplash():
 def clearScreen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+#Sets text color, may need to move to more appropriate file
+def setTextColor(text, colorChoice):
+    colors = Colors()
+    setColor = getattr(colors.Foreground, colorChoice)
+    coloredText = setColor + text + colors.reset
+    return coloredText
+
 def getLoginType():
     #Creates scrollable list of login options, extrapolate this for other screens
     loginOptions = [
