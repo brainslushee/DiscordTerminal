@@ -56,7 +56,7 @@ async def on_ready():
     print(hyphens)
     print(loggedInAs)
     print(hyphens)
-    await chooseServer(client)
+    await chooseChannel(client, await chooseServer(client))
 
 
 #Runs Discord, be patient, receive times are somewhat slow.

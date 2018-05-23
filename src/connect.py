@@ -21,10 +21,8 @@ def getUserInfo():
 #Creates a scrollable server select
 async def chooseServer(client):
     serverChoices = []
-    serverIDs = []
     for server in client.servers:
-        serverChoices.append(server.name)
-        serverIDs.append(server.id)
+        serverChoices.append(server)
     selectedServer = [
         inquirer.List('server',
                       message = "Select a server",
