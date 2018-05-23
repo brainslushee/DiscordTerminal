@@ -17,7 +17,9 @@ from ConfigManager import ConfigManager
 from Colors import Colors
 
 #Add functions from connect as needed
-from connect import getUserInfo, chooseServer#, closeClient
+from connect import getUserInfo, chooseServer, clearScreen#, closeClient
+
+clearScreen()
 
 splashScreen = '''
 ----------------------------------------------------
@@ -31,6 +33,7 @@ splashScreen = '''
     | | |  _| | |_) | |\/| || ||  \| | / _ \ | |
     | | | |___|  _ <| |  | || || |\  |/ ___ \| |___
     |_| |_____|_| \_\_|  |_|___|_| \_/_/   \_\_____|
+
 ----------------------------------------------------
     '''
 #Move this to client class eventually

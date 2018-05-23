@@ -4,6 +4,7 @@ import discord
 import asyncio
 import getpass
 import inquirer
+import os
 
 #Gets username and password
 def getUserInfo():
@@ -33,3 +34,7 @@ async def chooseServer(client):
     serverChoice = inquirer.prompt(selectedServer)
 async def closeClient(client):
     await client.close()
+
+def clearScreen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
