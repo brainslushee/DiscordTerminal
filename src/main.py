@@ -12,6 +12,7 @@
 
 import discord
 import asyncio
+import inquirer
 from ConfigManager import ConfigManager
 from Colors import Colors
 
