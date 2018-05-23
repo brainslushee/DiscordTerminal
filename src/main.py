@@ -28,6 +28,7 @@ showSplash()
 client = discord.Client()
 
 #This logs in user, maybe move to a function?
+#Make to switch statement and add more options eventually
 userInfo = {}
 loginType = getLoginType()
 if loginType == '1. use config file':
