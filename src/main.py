@@ -39,6 +39,8 @@ if loginType == '1. use config file':
 else:
     #Gets username and password as a dictionary
     userInfo = getUserInfo()
+    
+print("One moment please, we are trying to connect...")
 
 @client.event
 async def on_ready():

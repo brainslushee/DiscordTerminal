@@ -11,7 +11,6 @@ def getUserInfo():
 
     #getpass works like Linux password entry. (Does not display chars for password)
     password = getpass.getpass("Enter password: ")
-    print("One moment please, we are trying to connect...")
 
     info = {
         'username': username,
