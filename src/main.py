@@ -43,6 +43,7 @@ else:
     quit()
 
 print("One moment please, we are trying to connect...")
+channel = None
 
 @client.event
 async def on_ready():
@@ -56,7 +57,12 @@ async def on_ready():
     print(hyphens)
     print(loggedInAs)
     print(hyphens)
-    await chooseChannel(client, await chooseServer(client))
+
+    server = chooseServer(client)
+    channel = chooseChannel(client, server)
+
+    chat = input("Say something: ")
+    await client.send_message(channel, chat)
 
 
 #Runs Discord, be patient, receive times are somewhat slow.

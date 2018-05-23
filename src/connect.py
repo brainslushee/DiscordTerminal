@@ -20,7 +20,7 @@ def getUserInfo():
     return info
 
 #Creates a scrollable server select
-async def chooseServer(client):
+def chooseServer(client):
     serverChoices = []
     for server in client.servers:
         serverChoices.append(server)
@@ -34,7 +34,7 @@ async def chooseServer(client):
     return serverChoice['server']
 
 #This doesn't work yet, will open submenu of channels to join once working
-async def chooseChannel(client, server):
+def chooseChannel(client, server):
     clearScreen()
     showSplash()
     channelChoices = []
