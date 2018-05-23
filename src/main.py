@@ -43,9 +43,13 @@ else:
 @client.event
 async def on_ready():
     clearScreen()
-    print('--------------------------')
-    print('Logged in as: ' + client.user.name)
-    print('--------------------------')
+    hyphens = ""
+    loggedInAs = 'Logged in as: ' + client.user.name
+    for x in range(0, len(loggedInAs)):
+        hyphens += "-"
+    print(hyphens)
+    print(loggedInAs)
+    print(hyphens)
     await chooseServer(client)
 
 
