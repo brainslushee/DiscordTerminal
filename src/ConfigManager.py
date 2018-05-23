@@ -5,7 +5,6 @@ class ConfigManager:
         configFile = "../config/config.json"
         self.username = ""
         self.password = ""
-        self.token = ""
         self.readJSON(configFile)
 
     def getUserName(self):
@@ -13,9 +12,6 @@ class ConfigManager:
 
     def getPassword(self):
         return self.password
-
-    def getToken(self):
-        return self.token
 
     def getUserInfo(self):
         '''
@@ -25,10 +21,9 @@ class ConfigManager:
         info = {
                 'username': self.username,
                 'password': self.password,
-                'token': self.token,
               }
         return info
-        
+
     def readJSON(self, configFile):
         '''
         Reads in json config file located in
@@ -38,5 +33,3 @@ class ConfigManager:
             loginCredentials = json.load(jsonFile)
             self.username = loginCredentials["username"]
             self.password = loginCredentials["password"]
-            self.token = loginCredentials["token"]
-

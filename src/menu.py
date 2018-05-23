@@ -44,4 +44,4 @@ def getLoginType():
 
     #Depending on loginOption selected, uses config or manual login. Maybe make into switch statement
     loginType = inquirer.prompt(loginOptions)
-    return loginType
+    return loginType['choice']
