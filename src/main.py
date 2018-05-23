@@ -18,7 +18,7 @@ from Colors import Colors
 
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, chooseChannel#, closeClient
-from menu import showSplash, clearScreen, getLoginType, setTextColor
+from menu import showSplash, clearScreen, getLoginType, setTextColor, quit
 
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
@@ -36,9 +36,11 @@ if loginType == 'Config File Login':
     config = ConfigManager()
     userInfo = config.getUserInfo()
     #use token from config file
-else:
+elif loginType == 'Manual Login':
     #Gets username and password as a dictionary
     userInfo = getUserInfo()
+else:
+    quit()
 
 print("One moment please, we are trying to connect...")
 
@@ -48,7 +50,6 @@ async def on_ready():
     showSplash()
     #Move this to a function
     hyphens = ""
-
     loggedInAs = 'Logged in as: ' + setTextColor(client.user.name, 'red')
     for x in range(0, len(loggedInAs) - 9):
         hyphens += "-"

@@ -1,5 +1,6 @@
 from Colors import Colors
 import os
+import sys
 import inquirer
 
 #Shows the splash screen
@@ -30,6 +31,10 @@ def showSplash():
 def clearScreen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def quit():
+    clearScreen()
+    sys.exit()
+
 #Sets text color, may need to move to more appropriate file
 def setTextColor(text, colorChoice):
     colors = Colors()
@@ -45,6 +50,7 @@ def getLoginType():
                       choices = [
                           'Config File Login',
                           'Manual Login',
+                          'Exit',
                       ],
                      ),
         ]
