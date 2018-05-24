@@ -63,9 +63,9 @@ async def on_ready():
     #Definitely move this to another function
     #It sends one message from YOU
     chat = input("Say something: ")
-    await client.send_message(channel, chat)
     server = chooseServer(client)
     channel = chooseChannel(client, server)
+    await client.send_message(channel, chat)
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
