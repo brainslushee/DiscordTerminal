@@ -1,6 +1,5 @@
-1) Make menus scrollable (think like a Mario NES title screen)
-2) Switch servers/private convo (hotkeys? scroll menu?)
-3) View messages
-4) Send messages
-5) Get channels selectable
+2) Switch servers/private convo (hotkeys? scroll menu?) and channels
+3) View private messages
+4) Send private messages
+5) Make messages exclusive to channel
 6) Make docstrings for each function
