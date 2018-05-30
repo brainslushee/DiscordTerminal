@@ -45,8 +45,6 @@ else:
 print("One moment please, we are trying to connect...")
 
 #Global variables for now...
-server = None
-channel = None
 
 @client.event
 async def on_ready():
@@ -60,21 +58,28 @@ async def on_ready():
     print(hyphens)
     print(loggedInAs)
     print(hyphens)
-    server = chooseServer(client)
-    channel = chooseChannel(client, server)
+    await client.wait_until_ready()
+    tUser = TerminalUser
+    #await client.wait_until_login()
+    #User = TerminalUser(client)
+    #server = chooseServer(client)
+    #channel = chooseChannel(client, server)
     #Definitely move this to another function
     #It sends one message from YOU
-    chat = input("Say something: ")
-    await client.send_message(channel, chat)
+    #chat = input("Say something: ")
+    #await client.send_message(channel, chat)
 
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
-    while channel != None:
-    #The server is still None, needs to match object
-        if message.channel == channel:
-            print(message.content)
+    await client.wait_until_ready()
+    if tUser.server == message.server:
+        print(message.content)
 
+class TerminalUser(client):
+    client.wait_until_ready()
+    server = chooseServer(client)
+    channel = chooseChannel(client)
 #Runs Discord, be patient, receive times are somewhat slow.
 #Add client.logout() and close() here to fix the unclosed session error
 loop = asyncio.get_event_loop()
