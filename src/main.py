@@ -42,7 +42,7 @@ elif loginType == 'Manual Login':
 else:
     quit()
 print("One moment please, we are trying to connect...")
-#Global variables for now...
+
 @client.event
 async def on_ready():
     clearScreen()
@@ -55,6 +55,8 @@ async def on_ready():
     print(hyphens)
     print(loggedInAs)
     print(hyphens)
+
+    #Defines server and channel
     global server
     global channel
     server = chooseServer(client)
@@ -69,6 +71,7 @@ async def on_ready():
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
+    #Ensures that server and channel are set
     try:
         if channel == message.channel and server == message.server:
             print(message.content)
