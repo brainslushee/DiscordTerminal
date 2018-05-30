@@ -42,10 +42,9 @@ elif loginType == 'Manual Login':
 else:
     quit()
 
+global server
 print("One moment please, we are trying to connect...")
-
 #Global variables for now...
-
 @client.event
 async def on_ready():
     clearScreen()
@@ -66,10 +65,13 @@ async def on_ready():
     #chat = input("Say something: ")
     #await client.send_message(channel, chat)
 
+
 #Currently displays all messages from all servers. Still cool though.
-#@client.event
+@client.event
 async def on_message(message):
-    return(message)
+    await client.wait_until_login()
+    if message.server == server:
+        print(message)
 #Runs Discord, be patient, receive times are somewhat slow.
 #Add client.logout() and close() here to fix the unclosed session error
 loop = asyncio.get_event_loop()

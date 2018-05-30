@@ -11,3 +11,7 @@ File Structure
 Features to add later:
 	 -Voice
 	 -Image render
+
+Thoughts:
+  server and channel are getting redefined to None over and over
+  figure out how to make it persistent, and we are golden
