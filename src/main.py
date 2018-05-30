@@ -56,6 +56,7 @@ async def on_ready():
     print(loggedInAs)
     print(hyphens)
     global server
+    global channel
     server = chooseServer(client)
     channel = chooseChannel(client, server)
 
@@ -68,8 +69,11 @@ async def on_ready():
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
-    if server == message.server:
-        print(message.content)
+    try:
+        if channel == message.channel and server == message.server:
+            print(message.content)
+    except Exception as e:
+        pass
 #Runs Discord, be patient, receive times are somewhat slow.
 #Add client.logout() and close() here to fix the unclosed session error
 loop = asyncio.get_event_loop()
