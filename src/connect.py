@@ -51,7 +51,6 @@ def chooseChannel(client, server):
                       ),
         ]
     channelChoice = inquirer.prompt(selectedChannel)
-    print(channelChoice['channel'])
     return channelChoice['channel']
 
 async def closeClient(client):
