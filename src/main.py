@@ -66,12 +66,14 @@ async def on_ready():
     #It sends one message from YOU
     chat = input("Say something: ")
     await client.send_message(channel, chat)
+
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
+    while channel != None:
     #The server is still None, needs to match object
-    if message.server == server:
-        print(message.content)
+        if message.channel == channel:
+            print(message.content)
 
 #Runs Discord, be patient, receive times are somewhat slow.
 #Add client.logout() and close() here to fix the unclosed session error
