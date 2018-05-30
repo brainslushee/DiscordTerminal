@@ -1,3 +1,4 @@
+1) If config != "enter name here", auto login
 2) Switch servers/private convo (hotkeys? scroll menu?) and channels
 3) View private messages
 4) Send private messages
