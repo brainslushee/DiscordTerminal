@@ -57,6 +57,10 @@ async def on_ready():
     server = chooseServer(client)
     channel = chooseChannel(client, server)
 
+    #Whoever gets this in an async loop wins the game
+    chat = input(setTextColor(client.user.name + ": ", "red"))
+    await client.send_message(channel, chat)
+
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
@@ -65,15 +69,6 @@ async def on_message(message):
         if channel == message.channel and server == message.server:
             print(messageFormat(message))
     except Exception as e:
-        pass
-@client.event
-async def writeMessage():
-    asyncio.ensure_future(writeMessage())
-    try:
-        channel
-        chat = input("Say something: ")
-        await client.send_message(channel, chat)
-    except NameError:
         pass
 
 #Runs Discord, be patient, receive times are somewhat slow.
