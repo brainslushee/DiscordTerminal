@@ -19,6 +19,7 @@ from Colors import Colors
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, chooseChannel#, closeClient
 from menu import showSplash, clearScreen, getLoginType, setTextColor, quit
+from client import printLoggedIn
 
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
@@ -47,14 +48,8 @@ print("One moment please, we are trying to connect...")
 async def on_ready():
     clearScreen()
     showSplash()
-    #Move this to a function
-    hyphens = ""
     loggedInAs = 'Logged in as: ' + setTextColor(client.user.name, 'red')
-    for x in range(0, len(loggedInAs) - 9):
-        hyphens += "-"
-    print(hyphens)
-    print(loggedInAs)
-    print(hyphens)
+    print(printLoggedIn(loggedInAs))
 
     #Defines server and channel
     global server

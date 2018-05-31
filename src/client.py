@@ -11,4 +11,10 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-#client.close()
+def printLoggedIn(loggedInAs):
+    hyphens = ""
+    for x in range(0, len(loggedInAs) - 9):
+        hyphens += "-"
+    print(hyphens)
+    print(loggedInAs)
+    print(hyphens)
