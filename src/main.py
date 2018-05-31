@@ -57,15 +57,6 @@ async def on_ready():
     server = chooseServer(client)
     channel = chooseChannel(client, server)
 
-    #Definitely move this to another function
-    #It sends one message from YOU
-    #chat = ""
-    #while chat != "EXIT":
-    #    chat = input("Say something: ")
-    #    await client.send_message(channel, chat)
-    #quit()
-
-
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
@@ -75,7 +66,18 @@ async def on_message(message):
             print(messageFormat(message))
     except Exception as e:
         pass
+@client.event
+async def writeMessage():
+    #asyncio.ensure_future(writeMessage())
+    try:
+        channel
+        chat = input("Say something: ")
+        await client.send_message(channel, chat)
+    except NameError:
+        pass
+
 #Runs Discord, be patient, receive times are somewhat slow.
 #Add client.logout() and close() here to fix the unclosed session error
 loop = asyncio.get_event_loop()
 loop.run_until_complete(client.start(userInfo['username'], userInfo['password']))
+#asyncio.ensure_future(writeMessage())
