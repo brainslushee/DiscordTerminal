@@ -17,7 +17,7 @@ from ConfigManager import ConfigManager
 from Colors import Colors
 
 #Add functions from connect as needed
-from connect import getUserInfo, chooseServer, chooseChannel#, closeClient
+from connect import getUserInfo, chooseServer, chooseChannel, messageFormat#, closeClient
 from menu import showSplash, clearScreen, getLoginType, setTextColor, quit
 from client import printLoggedIn
 
@@ -59,8 +59,11 @@ async def on_ready():
 
     #Definitely move this to another function
     #It sends one message from YOU
-    #chat = input("Say something: ")
-    #await client.send_message(channel, chat)
+    #chat = ""
+    #while chat != "EXIT":
+    #    chat = input("Say something: ")
+    #    await client.send_message(channel, chat)
+    #quit()
 
 
 #Currently displays all messages from all servers. Still cool though.
@@ -69,7 +72,7 @@ async def on_message(message):
     #Ensures that server and channel are set
     try:
         if channel == message.channel and server == message.server:
-            print(message.content)
+            print(messageFormat(message))
     except Exception as e:
         pass
 #Runs Discord, be patient, receive times are somewhat slow.

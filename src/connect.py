@@ -55,3 +55,7 @@ def chooseChannel(client, server):
 
 async def closeClient(client):
     await client.close()
+
+def messageFormat(message):
+    author = str(message.author).split("#")[0]
+    return setTextColor(author, "blue") + ": " + str(message.content)
