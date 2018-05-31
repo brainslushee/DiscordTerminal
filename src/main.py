@@ -68,7 +68,7 @@ async def on_message(message):
         pass
 @client.event
 async def writeMessage():
-    #asyncio.ensure_future(writeMessage())
+    asyncio.ensure_future(writeMessage())
     try:
         channel
         chat = input("Say something: ")
