@@ -21,6 +21,8 @@ def getUserInfo():
 
 #Creates a scrollable server select
 def chooseServer(client):
+    clearScreen()
+    showSplash()
     serverChoices = []
     for server in client.servers:
         serverChoices.append(server)
