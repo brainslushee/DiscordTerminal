@@ -4,3 +4,4 @@
 4) Send private messages
 6) Make docstrings for each function
 7) Make Shift S to SHIFT server, Shift C to SHIFT channel. Probably not shift, incase someone wants to type capital letters. Some other hot key.
+8) Re-organize functions and rename files
