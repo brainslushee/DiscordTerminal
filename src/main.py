@@ -15,6 +15,7 @@ import asyncio
 import inquirer
 from ConfigManager import ConfigManager
 from Colors import Colors
+from contextlib import suppress
 
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, chooseChannel, messageFormat#, closeClient
@@ -60,13 +61,16 @@ async def on_ready():
     #Infinite loop that prompts for input...
     chatTask =  asyncio.Task(chat(client, server, channel))
     await asyncio.sleep(2)
+    #chatTask.cancel()
+    #with suppress(asyncio.CancelledError):
+    #    await chatTask
 
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
     receiveTask = asyncio.Task(printMessage(message))
-    await asyncio.sleep(2)
-    receiveTask.cancel()
+    #await asyncio.sleep(2)
+    #receiveTask.cancel()
 
 async def printMessage(message):
     try:
