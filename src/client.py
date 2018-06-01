@@ -17,15 +17,17 @@ def printLoggedIn(loggedInAs):
 
 async def chat(client, server, channel):
     #Whoever gets this in an async loop wins the game
-    message = input(setTextColor(client.user.name + ": ", "red"))
-    #Move to a function and make it a hotkey
-    if message == "MENU":
-        menuChoice = openMenu()
-        if menuChoice == 'Change Server':
-            server = chooseServer(client)
-        if menuChoice == 'Change Channel':
-            channel = chooseChannel(client, server)
-        if menuChoice == 'Exit Discord Terminal':
-            quit()
-    else:
-        await client.send_message(channel, message)
+    while True:
+        message = input(setTextColor(client.user.name + ": ", "red"))
+        #Move to a function and make it a hotkey
+        if message == "MENU":
+            menuChoice = openMenu()
+            if menuChoice == 'Change Server':
+                server = chooseServer(client)
+            if menuChoice == 'Change Channel':
+                channel = chooseChannel(client, server)
+            if menuChoice == 'Exit Discord Terminal':
+                quit()
+        else:
+            await client.send_message(channel, message)
+        await asyncio.sleep(1)

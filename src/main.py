@@ -57,7 +57,8 @@ async def on_ready():
     server = chooseServer(client)
     channel = chooseChannel(client, server)
     #Put this into a loop and we win...
-    await chat(client, server, channel)
+    chatTask =  asyncio.Task(chat(client, server, channel))
+    await asyncio.sleep(2)
 
 #Currently displays all messages from all servers. Still cool though.
 @client.event
