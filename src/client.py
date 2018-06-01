@@ -24,6 +24,7 @@ async def chat(client, server, channel):
             menuChoice = openMenu()
             if menuChoice == 'Change Server':
                 server = chooseServer(client)
+                channel = chooseChannel(client, server)
             if menuChoice == 'Change Channel':
                 channel = chooseChannel(client, server)
             if menuChoice == 'Exit Discord Terminal':

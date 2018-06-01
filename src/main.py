@@ -67,7 +67,10 @@ async def on_message(message):
     #Ensures that server and channel are set
     try:
         if channel == message.channel and server == message.server:
-            print(messageFormat(message))
+            if message.author == client.user:
+                pass
+            else:
+                print(messageFormat(message))
     except Exception as e:
         pass
 
