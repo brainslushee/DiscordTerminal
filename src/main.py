@@ -64,7 +64,10 @@ async def on_ready():
 #Currently displays all messages from all servers. Still cool though.
 @client.event
 async def on_message(message):
-    #Ensures that server and channel are set
+    receiveTask = asyncio.Task(printMessage(message))
+    await asyncio.sleep(2)
+
+async def printMessage(message):
     try:
         if channel == message.channel and server == message.server:
             if message.author == client.user:
