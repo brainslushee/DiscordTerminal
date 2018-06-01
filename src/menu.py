@@ -33,6 +33,21 @@ def quit():
     clearScreen()
     sys.exit()
 
+def openMenu():
+
+    menuOptions = [
+        inquirer.List('option',
+                      message = "Menu",
+                      choice = [
+                         'Change Server',
+                         'Change Channel',
+                         'Exit Discord Terminal'
+                      ],
+                     ),
+    ]
+    menuSelection = inquirer.prompt(menuOptions)
+    return menuSelection['choice']
+
 #Sets text color, may need to move to more appropriate file
 def setTextColor(text, colorChoice):
     colors = Colors()
