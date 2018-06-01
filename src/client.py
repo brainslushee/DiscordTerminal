@@ -2,14 +2,10 @@
 
 import discord
 import asyncio
+from connect import chooseServer, chooseChannel
+from menu import setTextColor, openMenu
 
 #client = discord.Client()
-
-async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
 
 def printLoggedIn(loggedInAs):
     hyphens = ""
@@ -18,3 +14,18 @@ def printLoggedIn(loggedInAs):
     print(hyphens)
     print(loggedInAs)
     print(hyphens)
+
+async def chat(client, server, channel):
+    #Whoever gets this in an async loop wins the game
+    message = input(setTextColor(client.user.name + ": ", "red"))
+    #Move to a function and make it a hotkey
+    if message == "MENU":
+        menuChoice = openMenu()
+        if menuChoice == 'Change Server':
+            server = chooseServer(client)
+        if menuChoice == 'Change Channel':
+            channel = chooseChannel(client, server)
+        if menuChoice == 'Exit Discord Terminal':
+            quit()
+    else:
+        await client.send_message(channel, message)

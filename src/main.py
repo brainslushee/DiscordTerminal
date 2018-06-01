@@ -18,8 +18,8 @@ from Colors import Colors
 
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, chooseChannel, messageFormat#, closeClient
-from menu import showSplash, clearScreen, getLoginType, setTextColor, quit, openMenu, chat
-from client import printLoggedIn
+from menu import showSplash, clearScreen, getLoginType, setTextColor, quit, openMenu
+from client import printLoggedIn, chat
 
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()

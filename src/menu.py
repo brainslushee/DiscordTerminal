@@ -1,5 +1,4 @@
 from Colors import Colors
-from connect import chooseServer, chooseChannel
 import os
 import sys
 import inquirer
@@ -48,21 +47,6 @@ def openMenu():
     ]
     menuSelection = inquirer.prompt(menuOptions)
     return menuSelection['option']
-
-async def chat(client, server, channel):
-    #Whoever gets this in an async loop wins the game
-    message = input(setTextColor(client.user.name + ": ", "red"))
-    #Move to a function and make it a hotkey
-    if message == "MENU":
-        menuChoice = openMenu()
-        if menuChoice == 'Change Server':
-            server = chooseServer(client)
-        if menuChoice == 'Change Channel':
-            channel = chooseChannel(client, server)
-        if menuChoice == 'Exit Discord Terminal':
-            quit()
-    else:
-        await client.send_message(channel, message)
 
 #Sets text color, may need to move to more appropriate file
 def setTextColor(text, colorChoice):
