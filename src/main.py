@@ -18,7 +18,7 @@ from Colors import Colors
 
 #Add functions from connect as needed
 from connect import getUserInfo, chooseServer, chooseChannel, messageFormat#, closeClient
-from menu import showSplash, clearScreen, getLoginType, setTextColor, quit
+from menu import showSplash, clearScreen, getLoginType, setTextColor, quit, openMenu
 from client import printLoggedIn
 
 #Clears the screen so that the splashScreen is all that displays
@@ -59,7 +59,17 @@ async def on_ready():
 
     #Whoever gets this in an async loop wins the game
     chat = input(setTextColor(client.user.name + ": ", "red"))
-    await client.send_message(channel, chat)
+    #Move to a function and make it a hotkey
+    if chat == "MENU":
+        menuChoice = openMenu()
+        if menuChoice == 'Change Server':
+            server = chooseServer(client)
+        if menuChoice == 'Change Channel':
+            channel = chooseChannel(client, server)
+        if menuChoice == 'Exit Discord Terminal':
+            quit()
+    else:
+        await client.send_message(channel, chat)
 
 #Currently displays all messages from all servers. Still cool though.
 @client.event

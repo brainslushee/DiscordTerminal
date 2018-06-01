@@ -38,15 +38,15 @@ def openMenu():
     menuOptions = [
         inquirer.List('option',
                       message = "Menu",
-                      choice = [
+                      choices = [
                          'Change Server',
                          'Change Channel',
-                         'Exit Discord Terminal'
+                         'Exit Discord Terminal',
                       ],
                      ),
     ]
     menuSelection = inquirer.prompt(menuOptions)
-    return menuSelection['choice']
+    return menuSelection['option']
 
 #Sets text color, may need to move to more appropriate file
 def setTextColor(text, colorChoice):
