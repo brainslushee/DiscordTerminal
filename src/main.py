@@ -66,6 +66,7 @@ async def on_ready():
 async def on_message(message):
     receiveTask = asyncio.Task(printMessage(message))
     await asyncio.sleep(2)
+    receiveTask.cancel()
 
 async def printMessage(message):
     try:
