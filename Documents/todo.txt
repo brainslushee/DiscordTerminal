@@ -6,3 +6,4 @@
 7) Make Shift S to SHIFT server, Shift C to SHIFT channel. Probably not shift, incase someone wants to type capital letters. Some other hot key.
 8) Re-organize functions and rename files
 9) Have past 20ish messages display on screen right away when channel changed
+10) Figure out solution if a server has LARGE amount of channels
