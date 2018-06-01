@@ -56,7 +56,8 @@ async def on_ready():
     global channel
     server = chooseServer(client)
     channel = chooseChannel(client, server)
-    #Put this into a loop and we win...
+
+    #Infinite loop that prompts for input...
     chatTask =  asyncio.Task(chat(client, server, channel))
     await asyncio.sleep(2)
 

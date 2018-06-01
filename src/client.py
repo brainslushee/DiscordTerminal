@@ -15,8 +15,8 @@ def printLoggedIn(loggedInAs):
     print(loggedInAs)
     print(hyphens)
 
+#Used in main to allow user to chat
 async def chat(client, server, channel):
-    #Whoever gets this in an async loop wins the game
     while True:
         message = input(setTextColor(client.user.name + ": ", "red"))
         #Move to a function and make it a hotkey
