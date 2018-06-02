@@ -13,6 +13,8 @@
 import discord
 import asyncio
 import inquirer
+import readline
+import sys
 from ConfigManager import ConfigManager
 from Colors import Colors
 from contextlib import suppress
@@ -78,7 +80,9 @@ async def printMessage(message):
             if message.author == client.user:
                 pass
             else:
-                print("\r" + messageFormat(message))
+                line = str(sys.stdin.readline.get_line_buffer())
+                print(messageFormat(message))
+                print(line)
     except Exception as e:
         pass
 
