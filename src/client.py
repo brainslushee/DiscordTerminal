@@ -36,4 +36,4 @@ async def chat(client, server, channel):
                 quit()
         else:
             await client.send_message(channel, message)
-        await asyncio.sleep(1)
+        await asyncio.sleep(15)
