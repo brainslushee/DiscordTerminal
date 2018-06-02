@@ -19,8 +19,9 @@ def printLoggedIn(loggedInAs):
 #Used in main to allow user to chat
 async def chat(client, server, channel):
     while True:
-        print("Type MENU to open the menu")
-        message = await ainput(setTextColor(client.user.name + ": ", "red"))
+        #print("Type MENU to open the menu")
+        #message = await ainput(setTextColor(client.user.name + ": ", "red"))
+        message = await ainput()
         #Move to a function and make it a hotkey
         if message == "MENU":
             menuChoice = openMenu()
