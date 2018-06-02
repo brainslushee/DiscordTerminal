@@ -2,6 +2,7 @@
 
 import discord
 import asyncio
+import curses
 from aioconsole import ainput
 from connect import chooseServer, chooseChannel
 from menu import setTextColor, openMenu
