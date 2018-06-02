@@ -3,11 +3,15 @@
 import discord
 import asyncio
 import curses
+import readline
 from aioconsole import ainput
 from connect import chooseServer, chooseChannel
 from menu import setTextColor, openMenu
 
 #client = discord.Client()
+
+CURSOR_UP_ONE = '\x1b[1A'
+ERASE_LINE = '\x1b[2M'
 
 def printLoggedIn(loggedInAs):
     hyphens = ""
@@ -22,7 +26,8 @@ async def chat(client, server, channel):
     while True:
         #print("Type MENU to open the menu")
         #message = await ainput(setTextColor(client.user.name + ": ", "red"))
-        message = await ainput()
+        line = readline.get_line_buffer()
+        message = await ainput(line)
         #Move to a function and make it a hotkey
         if message == "MENU":
             menuChoice = openMenu()
