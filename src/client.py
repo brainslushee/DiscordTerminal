@@ -10,9 +10,6 @@ from menu import setTextColor, openMenu
 
 #client = discord.Client()
 
-CURSOR_UP_ONE = '\x1b[1A'
-ERASE_LINE = '\x1b[2M'
-
 def printLoggedIn(loggedInAs):
     hyphens = ""
     for x in range(0, len(loggedInAs) - 9):
@@ -27,6 +24,7 @@ async def chat(client, server, channel):
         #print("Type MENU to open the menu")
         #message = await ainput(setTextColor(client.user.name + ": ", "red"))
         line = readline.get_line_buffer()
+        readline.redisplay()
         message = await ainput(line)
         #Move to a function and make it a hotkey
         if message == "MENU":

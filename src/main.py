@@ -78,7 +78,7 @@ async def printMessage(message):
             if message.author == client.user:
                 pass
             else:
-                print(messageFormat(message))
+                print("\r" + messageFormat(message))
     except Exception as e:
         pass
 
