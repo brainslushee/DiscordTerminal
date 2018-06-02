@@ -22,10 +22,10 @@ def printLoggedIn(loggedInAs):
 async def chat(client, server, channel):
     while True:
         #print("Type MENU to open the menu")
-        #message = await ainput(setTextColor(client.user.name + ": ", "red"))
-        line = readline.get_line_buffer()
-        readline.redisplay()
-        message = await ainput(line)
+        message = await ainput(setTextColor(client.user.name + ": ", "red"))
+        #line = readline.get_line_buffer()
+        #readline.redisplay()
+        #message = await ainput(line)
         #Move to a function and make it a hotkey
         if message == "MENU":
             menuChoice = openMenu()
