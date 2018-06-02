@@ -2,6 +2,7 @@
 
 import discord
 import asyncio
+from aioconsole import ainput
 from connect import chooseServer, chooseChannel
 from menu import setTextColor, openMenu
 
@@ -19,7 +20,7 @@ def printLoggedIn(loggedInAs):
 async def chat(client, server, channel):
     while True:
         print("Type MENU to open the menu")
-        message = input(setTextColor(client.user.name + ": ", "red"))
+        message = await ainput(setTextColor(client.user.name + ": ", "red"))
         #Move to a function and make it a hotkey
         if message == "MENU":
             menuChoice = openMenu()
