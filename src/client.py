@@ -25,7 +25,7 @@ async def chat(client, server, channel):
     while True:
         #print("Type MENU to open the menu")
         #message = await ainput(setTextColor(client.user.name + ": ", "red"))
-        with term.move_down:
+        with term.location(0, term.height-1):
             message = await ainput()
         #Move to a function and make it a hotkey
         if message == "MENU":
