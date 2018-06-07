@@ -7,6 +7,8 @@ import readline
 from aioconsole import ainput
 from connect import chooseServer, chooseChannel
 from menu import setTextColor, openMenu
+from blessings import Terminal
+term = Terminal()
 
 #client = discord.Client()
 
