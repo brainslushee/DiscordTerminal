@@ -33,6 +33,9 @@ client = discord.Client()
 
 #This logs in user, maybe move to a function?
 #Make to switch statement and add more options eventually
+#tfw switch statements arent in python
+
+#maybe move all of this into its own function?
 userInfo = {}
 loginType = getLoginType()
 if loginType == 'Config File Login':
