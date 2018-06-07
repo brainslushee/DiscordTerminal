@@ -43,6 +43,12 @@ if loginType == 'Config File Login':
 elif loginType == 'Manual Login':
     #Gets username and password as a dictionary
     userInfo = getUserInfo()
+    setConfig = ""
+    while setConfig != "y" and setConfig != "n":
+        setConfig = input("Would you like to set your config now for faster login? [y/n] ")
+
+    if setConfig == "y":
+        ConfigManager.setUserInfo(userInfo['username'], userInfo['password'])
 else:
     quit()
 print("One moment please, we are trying to connect...")

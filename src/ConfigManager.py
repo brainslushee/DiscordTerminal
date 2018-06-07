@@ -1,4 +1,5 @@
 import json
+import os
 
 class ConfigManager:
     def __init__(self):
@@ -23,6 +24,17 @@ class ConfigManager:
                 'password': self.password,
               }
         return info
+
+    def setUserInfo(username, password):
+        configFile = "../config/config.json"
+        with open(configFile, 'r') as f:
+            data = json.load(f)
+            data['username'] = username
+            data['password'] = password
+
+            os.remove(configFile)
+            with open(configFile, 'w') as f:
+                json.dump(data, f, indent=4)
 
     def readJSON(self, configFile):
         '''
