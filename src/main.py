@@ -80,9 +80,9 @@ async def printMessage(message):
             if message.author == client.user:
                 pass
             else:
-                line = str(sys.stdin.readline.get_line_buffer())
+                #line = str(sys.stdin.readline.get_line_buffer())
                 print(messageFormat(message))
-                print(line)
+                #print(line)
     except Exception as e:
         pass
 
