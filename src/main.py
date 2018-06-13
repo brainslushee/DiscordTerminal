@@ -15,6 +15,7 @@ import asyncio
 import inquirer
 import readline
 import sys
+import locale
 from ConfigManager import ConfigManager
 from Colors import Colors
 from contextlib import suppress
@@ -24,6 +25,9 @@ from connect import getUserInfo, chooseServer, chooseChannel, messageFormat#, cl
 from menu import showSplash, clearScreen, getLoginType, setTextColor, quit, openMenu
 from client import printLoggedIn, chat
 
+#Sets locale for curses
+locale.setlocale(locale.LC_ALL, '')
+code = locale.getpreferredencoding()
 #Clears the screen so that the splashScreen is all that displays
 clearScreen()
 showSplash()
