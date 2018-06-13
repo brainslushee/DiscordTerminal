@@ -15,6 +15,7 @@ import asyncio
 import inquirer
 import readline
 import sys
+import curses
 import locale
 from ConfigManager import ConfigManager
 from Colors import Colors
@@ -29,6 +30,11 @@ from client import printLoggedIn, chat
 locale.setlocale(locale.LC_ALL, '')
 code = locale.getpreferredencoding()
 #Clears the screen so that the splashScreen is all that displays
+
+#Comment this back to revert to non-broken
+stdscr = curses.initscr()
+curses.noecho()
+
 clearScreen()
 showSplash()
 
