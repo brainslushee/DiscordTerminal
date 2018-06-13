@@ -4,6 +4,7 @@ import discord
 import asyncio
 import curses
 import readline
+import getch
 from aioconsole import ainput
 from connect import chooseServer, chooseChannel
 from menu import setTextColor, openMenu
@@ -25,8 +26,9 @@ async def chat(client, server, channel):
     while True:
         #print("Type MENU to open the menu")
         #message = await ainput(setTextColor(client.user.name + ": ", "red"))
-        with term.location(0, term.height-1):
-            message = await ainput()
+        buffered_message = ""
+        buffered_message += str(getch.getch)
+        message = await ainput(client.user.name + ": " + buffered_message)
         #Move to a function and make it a hotkey
         if message == "MENU":
             menuChoice = openMenu()
