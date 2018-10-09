@@ -32,8 +32,8 @@ code = locale.getpreferredencoding()
 #Clears the screen so that the splashScreen is all that displays
 
 #Comment this back to revert to non-broken
-stdscr = curses.initscr()
-curses.noecho()
+#stdscr = curses.initscr()
+#curses.noecho()
 
 clearScreen()
 showSplash()
